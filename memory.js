@@ -1,4 +1,37 @@
-var cards = ["demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "dudu.jpg", "mag.jpg", "demonhunter.jpg", "dkej.jpg" , "hunter.jpg", "lock.jpg", "war.jpg",  "prej.jpg", "palek.jpg", "rogal.jpg", "monk.jpg", "szam.jpg" ];
+var cardlosowanie = new Array(10);
+cardlosowanie[0] = ["demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg" ];
+cardlosowanie[1] = ["palek.jpg","dudu.jpg",  "lock.jpg", "hunter.jpg",  "monk.jpg",  "prej.jpg", "rogal.jpg","mag.jpg", "dkej.jpg",  "war.jpg", "szam.jpg", "demonhunter.jpg",   "monk.jpg", "demonhunter.jpg", "lock.jpg", "dudu.jpg",  "dkej.jpg", "mag.jpg",  "hunter.jpg",  "rogal.jpg",   "palek.jpg", "prej.jpg", "war.jpg",  "szam.jpg", ]; 
+cardlosowanie[2] = ["dkej.jpg", "dudu.jpg", "hunter.jpg", "szam.jpg",  "mag.jpg",  "palek.jpg", "prej.jpg", "monk.jpg", "rogal.jpg", "demonhunter.jpg",  "war.jpg", "lock.jpg", "war.jpg", "palek.jpg",  "dkej.jpg", "dudu.jpg",  "lock.jpg",  "monk.jpg",  "demonhunter.jpg", "prej.jpg", "rogal.jpg", "mag.jpg", "hunter.jpg", "szam.jpg", ]; 
+cardlosowanie[3] = ["demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg" ]; 
+cardlosowanie[4] = ["demonhunter.jpg", "hunter.jpg", "dkej.jpg",   "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "dudu.jpg", "szam.jpg", "war.jpg", "dkej.jpg", "demonhunter.jpg",  "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg" ]; 
+cardlosowanie[5] = ["mag.jpg", "demonhunter.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg",  "monk.jpg", "palek.jpg", "dkej.jpg",   "rogal.jpg", "szam.jpg", "war.jpg", "prej.jpg", "palek.jpg", "prej.jpg","dudu.jpg",  "lock.jpg", "hunter.jpg",  "monk.jpg",   "rogal.jpg", "szam.jpg","mag.jpg", "dkej.jpg",  "war.jpg",  "demonhunter.jpg", ]; 
+cardlosowanie[6] = ["demonhunter.jpg", "szam.jpg", "dudu.jpg", "monk.jpg", "hunter.jpg", "lock.jpg",  "palek.jpg", "prej.jpg", "dkej.jpg", "mag.jpg", "rogal.jpg",  "war.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", ]; 
+cardlosowanie[7] = ["rogal.jpg", "lock.jpg", "dkej.jpg",  "hunter.jpg",  "mag.jpg", "monk.jpg", "palek.jpg", "demonhunter.jpg", "szam.jpg", "war.jpg", "dudu.jpg", "prej.jpg", "palek.jpg","dudu.jpg",  "lock.jpg", "hunter.jpg",  "monk.jpg",  "prej.jpg", "rogal.jpg","mag.jpg", "dkej.jpg",  "war.jpg", "szam.jpg", "demonhunter.jpg", ]; 
+cardlosowanie[8] = ["war.jpg", "palek.jpg",  "dkej.jpg", "dudu.jpg",  "lock.jpg",  "monk.jpg",  "demonhunter.jpg", "prej.jpg", "rogal.jpg", "mag.jpg", "hunter.jpg", "szam.jpg",  "demonhunter.jpg", "hunter.jpg", "dkej.jpg",   "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "dudu.jpg", "szam.jpg", "war.jpg", ]; 
+cardlosowanie[9] = ["monk.jpg", "demonhunter.jpg","dudu.jpg",  "dkej.jpg", "mag.jpg",  "hunter.jpg", "lock.jpg", "rogal.jpg",   "palek.jpg", "prej.jpg", "war.jpg",  "szam.jpg",  "hunter.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "prej.jpg",  "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg",  "rogal.jpg", "szam.jpg", "war.jpg" ]; 
+cardlosowanie[10] = ["szam.jpg",  "monk.jpg", "dudu.jpg", "demonhunter.jpg","dkej.jpg",  "hunter.jpg","palek.jpg",  "mag.jpg",   "prej.jpg",  "war.jpg", "rogal.jpg", "lock.jpg",  "hunter.jpg", "dkej.jpg",   "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "dudu.jpg", "demonhunter.jpg", "szam.jpg", "war.jpg", ]; 
+
+
+function losowanie()
+{
+var wylosowane_obrazy = Math.round(Math.random() * cardlosowanie.length);
+wylosowany_uklad = cardlosowanie[wylosowane_obrazy];
+}
+
+losowanie();
+	
+
+var cards = wylosowany_uklad;
+
+if (cards == 0)
+{ 
+	$('.level').html('Poziom: Łatwy');
+} 
+else
+{
+	$('.level').html('Poziom: Średni');
+}
+	
 
 //alert(cards[4]);
 
@@ -69,6 +102,8 @@ var visible_nr;
 var lock = false;
 var pairsLeft = 12;
 
+
+
 function revealCard(nr)
 {
 	var opacityValue = $('#c' +nr).css('opacity');
@@ -137,7 +172,7 @@ function hide2Cards(nr1, nr2)
 	
 	if(pairsLeft == 0)
 	{
-		$('.board').html('<h1>Wygrałeś!<br>Wykonane w '+turnCounter+ ' ruchach</h1>');
+		$('.board').html('<h1>Wygrałeś!<br>Wykonane w '+turnCounter+ ' ruchach</h1><br /><br /><span class="reset" onclick="location.reload()"><h1>Zagrasz ponownie?</h1></span>');
 	}
 	
 	lock = false;
@@ -155,3 +190,4 @@ function restore2Cards(nr1, nr2)
 		
 		lock =false;
 }
+

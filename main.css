@@ -98,3 +98,19 @@ p
 	letter-spacing: 2px;
 	
 }
+
+.reset
+{
+	
+	cursor: pointer;
+	color: #7CFC00;
+	text-decoration: underline; 
+	
+}
+
+.level
+{
+	margin-top: 5px;
+	letter-spacing: 2px;
+	
+}
