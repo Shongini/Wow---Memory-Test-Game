@@ -1,5 +1,5 @@
-var cardlosowanie = new Array(10);
-cardlosowanie[0] = ["demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg" ];
+var cardlosowanie = new Array(11);
+cardlosowanie[0] = ["dkej.jpg", "dudu.jpg","palek.jpg","demonhunter.jpg", "mag.jpg", "monk.jpg", "hunter.jpg", "lock.jpg",   "prej.jpg", "war.jpg", "demonhunter.jpg", "dkej.jpg", "rogal.jpg", "szam.jpg",  "dudu.jpg", "hunter.jpg",  "mag.jpg",  "lock.jpg",  "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "palek.jpg","monk.jpg", ];
 cardlosowanie[1] = ["palek.jpg","dudu.jpg",  "lock.jpg", "hunter.jpg",  "monk.jpg",  "prej.jpg", "rogal.jpg","mag.jpg", "dkej.jpg",  "war.jpg", "szam.jpg", "demonhunter.jpg",   "monk.jpg", "demonhunter.jpg", "lock.jpg", "dudu.jpg",  "dkej.jpg", "mag.jpg",  "hunter.jpg",  "rogal.jpg",   "palek.jpg", "prej.jpg", "war.jpg",  "szam.jpg", ]; 
 cardlosowanie[2] = ["dkej.jpg", "dudu.jpg", "hunter.jpg", "szam.jpg",  "mag.jpg",  "palek.jpg", "prej.jpg", "monk.jpg", "rogal.jpg", "demonhunter.jpg",  "war.jpg", "lock.jpg", "war.jpg", "palek.jpg",  "dkej.jpg", "dudu.jpg",  "lock.jpg",  "monk.jpg",  "demonhunter.jpg", "prej.jpg", "rogal.jpg", "mag.jpg", "hunter.jpg", "szam.jpg", ]; 
 cardlosowanie[3] = ["demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "hunter.jpg", "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "szam.jpg", "war.jpg" ]; 
@@ -9,8 +9,7 @@ cardlosowanie[6] = ["demonhunter.jpg", "szam.jpg", "dudu.jpg", "monk.jpg", "hunt
 cardlosowanie[7] = ["rogal.jpg", "lock.jpg", "dkej.jpg",  "hunter.jpg",  "mag.jpg", "monk.jpg", "palek.jpg", "demonhunter.jpg", "szam.jpg", "war.jpg", "dudu.jpg", "prej.jpg", "palek.jpg","dudu.jpg",  "lock.jpg", "hunter.jpg",  "monk.jpg",  "prej.jpg", "rogal.jpg","mag.jpg", "dkej.jpg",  "war.jpg", "szam.jpg", "demonhunter.jpg", ]; 
 cardlosowanie[8] = ["war.jpg", "palek.jpg",  "dkej.jpg", "dudu.jpg",  "lock.jpg",  "monk.jpg",  "demonhunter.jpg", "prej.jpg", "rogal.jpg", "mag.jpg", "hunter.jpg", "szam.jpg",  "demonhunter.jpg", "hunter.jpg", "dkej.jpg",   "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "dudu.jpg", "szam.jpg", "war.jpg", ]; 
 cardlosowanie[9] = ["monk.jpg", "demonhunter.jpg","dudu.jpg",  "dkej.jpg", "mag.jpg",  "hunter.jpg", "lock.jpg", "rogal.jpg",   "palek.jpg", "prej.jpg", "war.jpg",  "szam.jpg",  "hunter.jpg", "demonhunter.jpg", "dkej.jpg", "dudu.jpg", "prej.jpg",  "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg",  "rogal.jpg", "szam.jpg", "war.jpg" ]; 
-cardlosowanie[10] = ["szam.jpg",  "monk.jpg", "dudu.jpg", "demonhunter.jpg","dkej.jpg",  "hunter.jpg","palek.jpg",  "mag.jpg",   "prej.jpg",  "war.jpg", "rogal.jpg", "lock.jpg",  "hunter.jpg", "dkej.jpg",   "lock.jpg", "mag.jpg", "monk.jpg", "palek.jpg", "prej.jpg", "rogal.jpg", "dudu.jpg", "demonhunter.jpg", "szam.jpg", "war.jpg", ]; 
-
+cardlosowanie[10] = ["dudu.jpg",  "szam.jpg",  "monk.jpg", "demonhunter.jpg","dkej.jpg", "dkej.jpg", "prej.jpg", "hunter.jpg","palek.jpg", "demonhunter.jpg", "lock.jpg", "mag.jpg",      "rogal.jpg",     "lock.jpg", "mag.jpg","war.jpg",  "palek.jpg", "prej.jpg", "war.jpg","hunter.jpg",  "rogal.jpg", "dudu.jpg","monk.jpg",  "szam.jpg",  ]; 
 
 function losowanie()
 {
@@ -18,24 +17,13 @@ var wylosowane_obrazy = Math.round(Math.random() * cardlosowanie.length);
 wylosowany_uklad = cardlosowanie[wylosowane_obrazy];
 }
 
+
 losowanie();
-	
+
 
 var cards = wylosowany_uklad;
 
-if (cards == 0)
-{ 
-	$('.level').html('Poziom: Łatwy');
-} 
-else
-{
-	$('.level').html('Poziom: Średni');
-}
-	
 
-//alert(cards[4]);
-
-//console.log(cards);
 
 var c0 = document.getElementById('c0');
 var c1 = document.getElementById('c1');
@@ -133,26 +121,30 @@ function revealCard(nr)
 		}
 		else
 		{
-			//secondcard
-			
-			if(cards[visible_nr] == cards[nr])
-				
-				{
-					//alert("para");
-					
-					setTimeout(function(){hide2Cards(nr, visible_nr)}, 750);
-					
-				}
-			else
-			{
-					//alert("pudło");
-					
-					setTimeout(function(){restore2Cards(nr, visible_nr)}, 1000);
-			}
-			
-			turnCounter++;
-			$('.score').html('Liczba ruchów: ' +turnCounter);
-			oneVisible = false;
+			//second card
+	if(visible_nr != nr)
+{
+	if(cards[visible_nr] == cards[nr])
+{
+	//alert("para");
+	setTimeout(function(){ hide2Cards(nr, visible_nr)}, 750);
+
+}
+	else
+{
+	//alert("pudło");
+	setTimeout(function(){ restore2Cards(nr, visible_nr)}, 1000);
+
+}
+
+	turnCounter++;
+	$('.score').html('Liczba ruchów: '+turnCounter);
+	oneVisible = false;
+}
+	else
+{
+	lock = false;
+}
 		}
 			
 		
@@ -190,4 +182,5 @@ function restore2Cards(nr1, nr2)
 		
 		lock =false;
 }
+
 
